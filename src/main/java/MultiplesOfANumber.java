@@ -4,10 +4,9 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * Created by doctor on 2/5/14.
+ * Created by Vladimir on 2/5/14.
  */
 public class MultiplesOfANumber {
-
     public static void main(String[] args) {
         try {
             File file = new File(args[0]);
@@ -26,13 +25,13 @@ public class MultiplesOfANumber {
                         i++;
                     }
                     System.out.println(n * i);
-                } if (x < 0) {
+                }
+                if (x < 0) {
                     while (x <= n * i) {
                         i--;
                     }
                     System.out.println(n * i);
                 }
-
             }
 
         } catch (IOException e) {

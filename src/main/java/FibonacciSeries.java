@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- * Created by doctor on 2/5/14.
+ * Created by Vladimir on 2/5/14.
  */
 public class FibonacciSeries {
     public static void main(String[] args) {
@@ -19,13 +19,17 @@ public class FibonacciSeries {
                 int x = 1;
                 int y = 1;
                 int result = 0;
-                while (i < number) {
-                    result = x + y;
-                    x = y;
-                    y = result;
-                    i++;
+                if (number == 1 || number == 2) {
+                    System.out.println(1);
+                } else {
+                    while (i < number) {
+                        result = x + y;
+                        x = y;
+                        y = result;
+                        i++;
+                    }
+                    System.out.println(result);
                 }
-                System.out.println(result);
             }
         } catch (IOException e) {
             System.out.println("File Read Error: " + e.getMessage());

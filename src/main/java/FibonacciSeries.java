@@ -8,11 +8,9 @@ import java.util.Scanner;
  */
 public class FibonacciSeries {
     public static void main(String[] args) {
-
         try {
             File file = new File(args[0]);
             Scanner in = new Scanner(new FileReader(file));
-            //String line;
             while (in.hasNextInt()) {
                 int number = in.nextInt();
                 int i = 2;

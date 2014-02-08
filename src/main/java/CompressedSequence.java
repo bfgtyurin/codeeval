@@ -12,7 +12,6 @@ public class CompressedSequence {
             File file = new File(args[0]);
             BufferedReader in = new BufferedReader(new FileReader(file));
             String line;
-            int j = 1;
             while ((line = in.readLine()) != null) {
                 String [] array = line.split("\\s");
                 int counter = 1;

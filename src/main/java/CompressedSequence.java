@@ -7,6 +7,7 @@ import java.io.IOException;
  * Created by vladimir on 2/7/14.
  */
 public class CompressedSequence {
+    public static final String SPACE = " ";
     public static void main (String[] args) {
         try {
             File file = new File(args[0]);
@@ -14,14 +15,18 @@ public class CompressedSequence {
             String line;
             while ((line = in.readLine()) != null) {
                 String [] array = line.split("\\s");
+                int[] intArray = new int [array.length];
+                for (int j = 0; j < intArray.length; j++ ) {
+                    intArray[j] = Integer.parseInt(array[j]);
+                }
                 int counter = 1;
-                String last = array[0];
-                for (int i = 1; i < array.length; i++) {
-                    if (last.equals(array[i])) {
+                int last = intArray[0];
+                for (int i = 1; i < intArray.length; i++) {
+                    if (last == (intArray[i])) {
                         counter++;
                     } else {
-                        System.out.print(counter + " " + last + " ");
-                        last = array[i];
+                        System.out.print(counter + SPACE + last + SPACE);
+                        last = intArray[i];
                         counter = 1;
                     }
                  }

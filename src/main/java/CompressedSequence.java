@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-
 /**
  * Created by vladimir on 2/7/14.
  */
@@ -30,7 +29,7 @@ public class CompressedSequence {
                         counter = 1;
                     }
                  }
-                System.out.print(counter + " " + last + " ");
+                System.out.print(counter + SPACE + last + SPACE);
                 System.out.println();
             }
         } catch (IOException e) {

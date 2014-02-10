@@ -37,7 +37,7 @@ public class MixedContent {
 
 
         } catch (IOException e) {
-            System.out.println("File read error" + e.getMessage());
+            System.out.println("File read error " + e.getMessage());
         }
     }
 }

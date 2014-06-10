@@ -4,38 +4,48 @@
  */
 public class PrimePalindrome {
     public static void main (String[] args) {
-        int i = 1000;
         int number = 1000;
-
-        while (!isPolyndrome(number)) {
-            while (!isPrime(i)) {
-                i--;
+        for (; number > 2; number--) {
+            if (isPrime(number) && isPalindrome(number)) {
+                System.out.println(number);
+                break;
             }
-            number = i;
-            i--;
         }
-        System.out.println(number);
-
-
     }
 
     public static boolean isPrime(int number) {
-        for (int i = number - 1; i > 1; i--) {
-            if ((number % i) == 0) {
+        int dem = 2;
+        if(number == 2) {
+            return true;
+        }
+        while (dem < number) {
+            if ((number % dem) == 0) {
                 return false;
+            }
+            else {
+                dem++;
             }
         }
         return true;
     }
 
-    public static boolean isPolyndrome(int number) {
-        int x = number / 100;
-        int y = (number - 100 * x) / 10;
-        int z = number - 100 * x - 10 * y;
-        if (x == z) {
-            return true;
+    public static int reverse(int number) {
+        int temp = 0;
+        while (number != 0) {
+            int lastDigit = number % 10;
+            temp = temp * 10 + lastDigit;
+            number = number / 10;
         }
+        return temp;
+    }
 
-        return false;
+    public static boolean isPalindrome(int number) {
+        return number == reverse(number);
+    }
+    // check Palindrome with using string
+    public static boolean isPalindrome2(int number) {
+        String temp = Integer.toString(number);
+        String rev = new StringBuilder(temp).reverse().toString();
+        return temp.equals(rev);
     }
 }

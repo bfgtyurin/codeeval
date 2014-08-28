@@ -16,42 +16,32 @@ public class AgeDistribution {
         try {
             Scanner in = new Scanner(new FileReader(file));
             while (in.hasNextInt()) {
-                process(in.nextInt());
+                System.out.println(distribute(in.nextInt()));
             }
         } catch (FileNotFoundException e) {
             System.out.println("File read error " + e.getMessage());
         }
     }
     
-    public static void process(int age) {
-        if (isValid(age)) {
-            distribute(age);
-        } else {
-            System.out.println(ERROR);
-        }
-    }
-    
-    private static boolean isValid(int age) {
-        return (age > 0 && age <= 100);
-    }
-    
-    public static void distribute(int age) {
-        if (age > 65) {
-            System.out.println("The Golden Years");
+    public static String distribute(int age) {
+        if (age < 0 || age > 100) {
+            return ERROR;
+        } else if (age > 65) {
+            return "The Golden Years";
         } else if (age > 25) {
-            System.out.println("Working for the man");
+            return "Working for the man";
         } else if (age > 18) {
-            System.out.println("College");
+            return "College";
         } else if (age > 14) {
-            System.out.println("High school");
+            return "High school";
         } else if (age > 11) {
-            System.out.println("Middle school");
+            return "Middle school";
         } else if (age > 4) {
-            System.out.println("Elementary school");
+            return "Elementary school";
         } else if (age > 2) {
-            System.out.println("Preschool Maniac");
+            return "Preschool Maniac";
         } else {
-            System.out.println("Still in Mama's arms");
+            return "Still in Mama's arms";
         }
     }
 }

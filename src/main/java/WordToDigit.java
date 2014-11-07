@@ -9,13 +9,14 @@ import java.io.IOException;
 public class WordToDigit {
     public static void main(String[] args) {
         File file = new File(args[0]);
+        BufferedReader in;
         try {
-            BufferedReader in = new BufferedReader(new FileReader(file));
+            in = new BufferedReader(new FileReader(file));
             String line;
             while ((line = in.readLine()) != null) {
-                String[] array = line.split(";");
-                for (int i = 0; i < array.length; i++) {
-                    System.out.print(whatANumber(array[i]));
+                String[] wordsArray = line.split(";");
+                for (String word : wordsArray) {
+                    System.out.print(whatANumber(word));
                 }
                 System.out.println();
             }

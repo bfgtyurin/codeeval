@@ -1,13 +1,8 @@
-
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
 
-/**
- * @author tyurin
- */
 public class AgeDistribution {
     private static final String ERROR = "This program is for humans";
     

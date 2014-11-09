@@ -25,14 +25,14 @@ public class StackImplementation {
         int size = 0;
 
         void popAndPrintResult() {
-            int counter = 0;
+            boolean print = true;
             StringBuilder sb = new StringBuilder("");
             while (size != 0) {
-                if (counter % 2 == 0) {
+                if (print) {
                     sb.append(peek()).append(" ");
                 }
                 pop();
-                counter++;
+                print = !print;
             }
             String result = sb.toString().trim();
             System.out.println(result);

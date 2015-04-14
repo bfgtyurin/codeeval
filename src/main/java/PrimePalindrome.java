@@ -1,7 +1,3 @@
-
-/**
- * Created by doctor on 1/24/14.
- */
 public class PrimePalindrome {
     public static void main (String[] args) {
         int number = 1000;
@@ -14,18 +10,11 @@ public class PrimePalindrome {
     }
 
     public static boolean isPrime(int number) {
-        int dem = 2;
-        if(number == 2) {
-            return true;
+        if(number < 2) return false;
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) return false;
         }
-        while (dem < number) {
-            if ((number % dem) == 0) {
-                return false;
-            }
-            else {
-                dem++;
-            }
-        }
+
         return true;
     }
 
@@ -44,8 +33,8 @@ public class PrimePalindrome {
     }
     // check Palindrome with using string
     public static boolean isPalindrome2(int number) {
-        String temp = Integer.toString(number);
-        String rev = new StringBuilder(temp).reverse().toString();
-        return temp.equals(rev);
+        String initial = Integer.toString(number);
+        String rev = new StringBuilder(initial).reverse().toString();
+        return initial.equals(rev);
     }
 }

@@ -22,7 +22,8 @@ class MaxRangeSum {
     private static void gains(int fromDay, String period) {
         String[] days = period.split("\\s");
         int result = 0;
-        for (int i = 0; i <= days.length - fromDay; i++) {
+        int step = days.length - fromDay;
+        for (int i = 0; i <= step; i++) {
             int sum = 0;
             for (int j = 0; j < fromDay; j++) {
                 sum += Integer.parseInt(days[j + i]);

@@ -1,9 +1,11 @@
+import static java.lang.System.out;
+
 public class PrimePalindrome {
     public static void main (String[] args) {
         int number = 1000;
         for (; number > 2; number--) {
             if (isPrime(number) && isPalindrome(number)) {
-                System.out.println(number);
+                out.println(number);
                 break;
             }
         }

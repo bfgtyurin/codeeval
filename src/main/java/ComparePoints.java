@@ -29,13 +29,23 @@ class ComparePoints {
     }
 
     private static String check(int curX, int curY, int locX, int locY) {
-        if (curX == locX && curY == locY) return "here";
+        if (curX == locX && curY == locY) {
+            return "here";
+        }
 
         StringBuilder sb = new StringBuilder();
-        if (curY < locY) sb.append("N");
-        if (curY > locY) sb.append("S");
-        if (curX < locX) sb.append("E");
-        if (curX > locX) sb.append("W");
+        if (curY < locY) {
+            sb.append("N");
+        }
+        if (curY > locY) {
+            sb.append("S");
+        }
+        if (curX < locX) {
+            sb.append("E");
+        }
+        if (curX > locX) {
+            sb.append("W");
+        }
 
         return sb.toString();
     }

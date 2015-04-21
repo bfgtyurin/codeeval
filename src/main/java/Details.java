@@ -39,7 +39,9 @@ class Details {
                 if (arr[i][j] == 'Y' && j < yPos) yPos = j;
             }
             int temp = yPos - xPos - 1;
-            if (temp < min) min = temp;
+            if (temp < min) {
+                min = temp;
+            }
         }
 
         out.println(min);

@@ -15,8 +15,10 @@ public class FizzBuzz {
 
     public static void fizzBuzz(int fizzNumber, int buzzNumber, int howLong) {
         StringBuilder output = new StringBuilder("");
+        int fizzBuzzNUmber = fizzNumber * buzzNumber;
         for (int i = 1; i <= howLong; i++) {
-            if (i % fizzNumber == 0 && i % buzzNumber == 0) {
+
+            if (i % fizzBuzzNUmber == 0) {
                 output.append("FB");
             } else if (i % fizzNumber == 0) {
                 output.append("F");
@@ -25,6 +27,7 @@ public class FizzBuzz {
             } else {
                 output.append(i);
             }
+
             output.append(" ");
         }
         String result = output.toString().trim();

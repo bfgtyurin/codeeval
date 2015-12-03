@@ -16,7 +16,6 @@ public class StringRotation {
             String[] split = line.split(",");
             solution(split[0], split[1]);
         }
-
     }
 
     private static void solution(String word, String possible) {
